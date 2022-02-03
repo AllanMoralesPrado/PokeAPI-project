@@ -110,3 +110,4 @@ for i in get_info(url_species)['flavor_text_entries']:
 print(descripcion)
 
 #hola-a-todos
+#como estan
