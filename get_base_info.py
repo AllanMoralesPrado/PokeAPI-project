@@ -25,6 +25,7 @@ if __name__ == '__main__':
     for key in stats:
         print(f'{key}: {stats[key]}',end=' | ')
 
+#un comentario
     
 
     
