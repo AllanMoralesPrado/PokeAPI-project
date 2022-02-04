@@ -2,7 +2,7 @@ from get_module import get_info
 from data import traducir
 import poke_validation as pv
 
-def pull_type(pkmn_name):
+def get_types_info(pkmn_name):
     pkmn_base = get_info(f'https://pokeapi.co/api/v2/pokemon/{pkmn_name}')
     resultado_ = get_info(f'https://pokeapi.co/api/v2/pokemon-species/{pkmn_name}/')
 
@@ -54,8 +54,8 @@ def pull_type(pkmn_name):
     return pkmn_type,pkmn_damage_rel
 
 if __name__ == '__main__':
-    name = 'articuno'
-    pokemon_tipo, pkmn_buffs_n_nerfs = pull_type(name)
+    name = 'gardevoir'
+    pokemon_tipo, pkmn_buffs_n_nerfs = get_types_info(name)
     
     print(f'Pokemon: {name}')
 
