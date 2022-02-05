@@ -18,44 +18,57 @@ def get_types_info(pkmn_name):
         'no_damage_to': []
     }
 
+    pkmn_damage_en = {
+        'double_damage_from': [],
+        'double_damage_to': [],
+        'half_damage_from':[],
+        'half_damage_to': [],
+        'no_damage_from': [],
+        'no_damage_to': []
+    }
+
     #tipo/tipo especial
+    pkmn_type_en = [tipo['type']['name'] for tipo in pkmn_base['types']]
     pkmn_type = [tipo['type']['url'] for tipo in pkmn_base['types']]
+    special_type = []
 
     #Funcion que captura tipos de pokemon y los almacena en una lista
-    def add_types_rel(damage_types,type_src):
+    def add_types_rel(damage_types,type_src,key):
         for ts in type_src:
-            damage_types.append(ts['url'])
+            damage_types.append(ts[key])
 
     #Iteracion: por cada tipo el cual pertenece un pokemon
     for i in pkmn_type:
         #Capturar el diccionario con que contenga la relacion de daño entre los tipos
         tipo = get_info(i)['damage_relations']
         #Para cada lista del diccionario de relaciones de daño
-        for key in pkmn_damage_rel:
+        for key,key_ in zip(pkmn_damage_rel, pkmn_damage_en):
             #Añadir los tipos de pokemon según la relación de daño correspondiente
-            add_types_rel(pkmn_damage_rel[key],tipo[key])
+            add_types_rel(pkmn_damage_rel[key],tipo[key],'url')
+            add_types_rel(pkmn_damage_en[key_],tipo[key_],'name')
 
     #Para cada clave del diccionario de relaciones de daño
-    for i in pkmn_damage_rel:
+    for i,j in zip(pkmn_damage_rel, pkmn_damage_en):
         #Eliminar redundancias de las listas asociadas a cada clave
         pkmn_damage_rel[i] = list(set(pkmn_damage_rel[i]))
+        pkmn_damage_en[j] = list(set(pkmn_damage_en[j]))
         #Traducir la URL del tipo al nombre del tipo en lenguaje "es"
         traducir(pkmn_damage_rel[i])
 
     traducir(pkmn_type)
 
     if resultado_['is_baby']:
-        pkmn_type.append('Bebé')
+        special_type.append('Bebé')
     if resultado_['is_legendary']:
-        pkmn_type.append('Legendario')
+        special_type.append('Legendario')
     if resultado_['is_mythical']:
-        pkmn_type.append('Mítico')
+        special_type.append('Mítico')
     
-    return pkmn_type,pkmn_damage_rel
+    return pkmn_type, pkmn_type_en, special_type, pkmn_damage_rel, pkmn_damage_en
 
 if __name__ == '__main__':
     name = 'gardevoir'
-    pokemon_tipo, pkmn_buffs_n_nerfs = get_types_info(name)
+    pokemon_tipo, pokemon_tipo_en, tipo_especial, pkmn_buffs_n_nerfs, pkmn_damage_eng = get_types_info(name)
     
     print(f'Pokemon: {name}')
 
