@@ -4,7 +4,7 @@ import data as d
 
 def get_base_pokemon(pkmn_name):
     pkmn_base = get_info(f'https://pokeapi.co/api/v2/pokemon/{pkmn_name}')
-  
+
     #id y peso
     pkmn_id = pkmn_base['id']
     pkmn_w = pkmn_base['weight']
