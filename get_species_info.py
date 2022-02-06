@@ -1,4 +1,5 @@
 from get_module import get_info
+import random
 
 def get_species(pkmn_name):
     pkmn_species = get_info(f'https://pokeapi.co/api/v2/pokemon-species/{pkmn_name}/')
@@ -12,11 +13,12 @@ def get_species(pkmn_name):
         pkmn_pre = 'No tiene'
 
     #descripcion
-    descripcion = None
+    descripcion_ = []
     for i in pkmn_species['flavor_text_entries']:
         if i['language']['name'] == 'es':
-            descripcion = i['flavor_text']
-            break
+            descripcion_.append(i['flavor_text'])
+    
+    descripcion = random.choice(descripcion_)
 
     return pkmn_pre, descripcion
 
