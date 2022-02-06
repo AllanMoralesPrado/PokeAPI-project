@@ -6,7 +6,7 @@ import time
 def show_pics(html, nombre):
     with open(f'{nombre}.html','w',encoding='utf8') as f:
         f.write(html)
-    print('Las fotos se mostrarán en tu Navegador...')
+    print('La información Pokémon solicitada se mostrará en tu Navegador Web...')
     time.sleep(2)
     webbrowser.open(f'{nombre}.html')
     time.sleep(5)
@@ -27,6 +27,6 @@ if __name__ == '__main__':
 
     html = build_html(id,name,weight,stats,sprite,pre_evolution,description,pokemon_tipo,pokemon_tipo_en,tipo_especial,pkmn_buffs_n_nerfs)
     show_pics(html,'output_alpha')
-    
+
     html = build_evo_html(name, get_evolution(name))
     show_pics(html,'evo_output_alpha')
