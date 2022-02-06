@@ -116,6 +116,6 @@ if __name__ == '__main__':
     from get_evo import get_evolution
     from show import show_pics
 
-    name = 'manectric'
+    name = 'lucario'
     html = build_evo_html(name, get_evolution(name))
     show_pics(html,'evo_output_alpha')

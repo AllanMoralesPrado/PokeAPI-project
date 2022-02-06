@@ -35,4 +35,4 @@ def get_evolution(pkmn_name):
     return pkmn_evo_chain
 
 if __name__ == '__main__':
-    print(get_evolution('gardevoir'))
+    print(get_evolution('lucario'))

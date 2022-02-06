@@ -1,11 +1,11 @@
-def counter_span(type_en,counter):
+def counter_span(counter):
     span_counter = ''
-    for type, tipo in zip(type_en,counter):
-        span_counter += f'''<span class="label {type}">{tipo}</span>
+    for type in counter:
+        span_counter += f'''<span class="label {type['name']}">{type['url']}</span>
         '''
     return span_counter
 
-def build_html(id, name, wght, stat, sprite, pre_evo, desc, type, type_en, special_t, counters, counters_en):
+def build_html(id, name, wght, stat, sprite, pre_evo, desc, type, type_en, special_t, counters):
     
     #Elementos para la etiqueta <table> (stat)
     html_table_data_set = ''
@@ -34,17 +34,17 @@ def build_html(id, name, wght, stat, sprite, pre_evo, desc, type, type_en, speci
     
     #Ventajas y desventajas
     html_counter_set = f'''<h3>Super efectivo contra:</h3>
-        {counter_span(counters_en['double_damage_to'],counters['double_damage_to'])}
+        {counter_span(counters['double_damage_to'])}
     <h3>Débil contra:</h3>
-        {counter_span(counters_en['double_damage_from'],counters['double_damage_from'])}
+        {counter_span(counters['double_damage_from'])}
     <h3>Resistente contra:</h3>
-        {counter_span(counters_en['half_damage_to'],counters['half_damage_to'])}
+        {counter_span(counters['half_damage_to'])}
     <h3>Poco Eficaz contra:</h3>
-        {counter_span(counters_en['half_damage_from'],counters['half_damage_from'])}
+        {counter_span(counters['half_damage_from'])}
     <h3>Inmune contra:</h3>
-        {counter_span(counters_en['no_damage_to'],counters['no_damage_to'])}
+        {counter_span(counters['no_damage_to'])}
     <h3>Ineficaz contra:</h3>
-        {counter_span(counters_en['no_damage_from'],counters['no_damage_from'])}
+        {counter_span(counters['no_damage_from'])}
     '''
 
     pkmn_html_body = f'''
@@ -92,10 +92,10 @@ if __name__ == '__main__':
     from get_types import get_types_info
     from show import show_pics
 
-    name = 'raikou'
+    name = 'lucario'
     id, weight, stats, sprite = get_base_pokemon(name)
     pre_evolution, description = get_species(name)
-    pokemon_tipo, pokemon_tipo_en, tipo_especial, pkmn_buffs_n_nerfs, pkmn_counters_en = get_types_info(name)
+    pokemon_tipo, pokemon_tipo_en, tipo_especial, pkmn_buffs_n_nerfs = get_types_info(name)
 
-    html = build_html(id,name,weight,stats,sprite,pre_evolution,description,pokemon_tipo,pokemon_tipo_en,tipo_especial,pkmn_buffs_n_nerfs,pkmn_counters_en)
+    html = build_html(id,name,weight,stats,sprite,pre_evolution,description,pokemon_tipo,pokemon_tipo_en,tipo_especial,pkmn_buffs_n_nerfs)
     show_pics(html,'output_alpha')
