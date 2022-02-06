@@ -15,11 +15,15 @@ def get_base_pokemon(pkmn_name):
     d.traducir(stat_name)
 
     pkmn_status = dict(zip(stat_name,base_stat))
-    return pkmn_id, pkmn_w, pkmn_status
+
+    #sprite(imagen)
+    pkmn_sprite = pkmn_base['sprites']['other']['official-artwork']['front_default']
+    
+    return pkmn_id, pkmn_w, pkmn_status, pkmn_sprite
 
 if __name__ == '__main__':
     name = 'gardevoir'
-    id, weight, stats = get_base_pokemon(name)
+    id, weight, stats, sprite = get_base_pokemon(name)
 
     print(f'#{id} {name}\nPeso: {weight/10} Kg.\nEstadísticas')
     for key in stats:

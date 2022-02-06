@@ -10,7 +10,7 @@ from get_species_info import get_species
 from get_types import get_types_info
 
 def show_pics(html, nombre):
-    with open(f'{nombre}.html','w') as f:
+    with open(f'{nombre}.html','w',encoding='utf8') as f:
         f.write(html)
     print('Las fotos se mostrarán en tu Navegador...')
     time.sleep(2)

@@ -9,7 +9,7 @@ def get_species(pkmn_name):
     if pkmn_species['evolves_from_species'] != None:
         pkmn_pre = pkmn_species['evolves_from_species']['name']
     else:
-        pkmn_pre = 'N/A'
+        pkmn_pre = 'No tiene'
 
     #descripcion
     descripcion = None
