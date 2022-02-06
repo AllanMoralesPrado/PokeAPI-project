@@ -92,7 +92,7 @@ if __name__ == '__main__':
     from get_types import get_types_info
     from show import show_pics
 
-    name = 'entei'
+    name = 'raikou'
     id, weight, stats, sprite = get_base_pokemon(name)
     pre_evolution, description = get_species(name)
     pokemon_tipo, pokemon_tipo_en, tipo_especial, pkmn_buffs_n_nerfs, pkmn_counters_en = get_types_info(name)
