@@ -49,7 +49,7 @@ while True:
             html = build_evo_html(name, get_evolution(name))
             show_pics(html,'evo_output')
         else:
-            print('Serás lleado al menú princial :)')
+            print('Serás llevado al menú princial :)')
             time.sleep(3)
     else:
         print(d.BYEBYE)

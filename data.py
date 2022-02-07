@@ -6,7 +6,9 @@ tipo de signo de puntuación adicional.
 
 Por ejemplo:
 
-    Mr. Mime, se debe ingresar como mr-mime o Mr-Mime.'''
+    Mr. Mime, se debe ingresar como mr-mime o Mr-Mime.
+    
+    > '''
 
 WELCOME = """
                 ██████╗░░█████╗░██╗░░██╗███████╗██████╗░███████╗██╗░░██╗
@@ -51,7 +53,8 @@ MAIN_MENU = """¿Qué desea hacer?
 
     > """
 
-MENU_1 = """¿Qué información desea conocer sobre ese Pokémon?
+MENU_1 = """
+¿Qué información desea conocer sobre ese Pokémon?
 
     1. Datos Generales
     2. Cadena Evolutiva
