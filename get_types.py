@@ -1,5 +1,4 @@
 from get_module import get_info
-from data import traducir
 
 #Funcion que captura tipos de pokemon y los almacena en una lista
 def add_types_rel(damage_types,type_src):

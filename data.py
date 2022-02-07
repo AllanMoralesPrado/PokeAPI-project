@@ -1,5 +1,10 @@
 def validacion_pokemon():
-    return "Introduce el nombre de un pokemon: "
+    return f'''Si el nombre del pokemon tiene espacios reemplace por "-". No coloque ningún
+tipo de signo de puntuación adicional.
+
+Por ejemplo:
+
+    Mr. Mime, se debe ingresar como mr-mime o Mr-Mime.'''
 
 WELCOME = """
                 ██████╗░░█████╗░██╗░░██╗███████╗██████╗░███████╗██╗░░██╗
