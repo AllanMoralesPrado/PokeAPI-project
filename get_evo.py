@@ -1,3 +1,13 @@
+#Módulo encargado de devolver una lista de tres sublistas
+# cada sublista corresponde a un nivel de evolución de la cadena evolutiva
+# y cada nivel contiene un pokemon tipo diccionario con las siguientes claves
+# id:       id del pokemon
+# name:     nombre del pokemon
+# sprite:   imagen frontal del pokemon
+# pre-evo:  pre-evolucion del pokemon (si existe)
+# types:    lista de tipos del pokemon
+# spec:     lista de tipos especiales del pokemon (si existen)
+
 from get_module import get_info
 from get_base_info import get_base_pokemon
 from get_types import get_types_info

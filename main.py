@@ -1,3 +1,6 @@
+#Archivo principal encargado de cargar un menú con características de UX y los módulos restantes del proyecto
+#Para que el usuario ingrese el nombre de un pokemon valido y reciba información de este en el navegador la que es cargada
+#desde una API REST
 import time
 import os
 import sys

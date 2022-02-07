@@ -1,3 +1,5 @@
+#Modulo encargado de devolver un str que contiene texto compatible con codigo html
+#A partir de patrones de etiquetado en funcion de la cadena evolutiva de un pokemon
 from build_pokemon_html import type_span
 
 def Preevolucion(nombre):

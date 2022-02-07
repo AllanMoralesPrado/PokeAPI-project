@@ -1,3 +1,8 @@
+#Modulo que devuelve tres valores:
+# pkmn_type_en: lista de str cuyos valores son los nombres de los tipos del pokemon (en ingles)
+# special_type: lista de str cuyos valores son los nombres de los tipos especiales del pokemon 
+# pkmn_damage_rel: diccionario de listas str cuyos valores son los nombres de los tipos del pokemon (en ingles)
+#                  que tienen relación del daño hacia el(los) tipos de este
 from get_module import get_info
 
 #Funcion que captura tipos de pokemon y los almacena en una lista

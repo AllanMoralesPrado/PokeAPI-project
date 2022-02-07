@@ -1,3 +1,5 @@
+#Módulo que define los métodos necesarios para extraer los datos de una API en formato JSON
+#y convertirlos en un diccionario Python
 import requests
 import json
 

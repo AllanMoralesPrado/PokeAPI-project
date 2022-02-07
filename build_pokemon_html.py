@@ -1,3 +1,5 @@
+#Modulo encargado de generar un str que contiene texto compatible con codigo html
+#A partir de patrones de etiquetado en funcion de los datos del pokemon ingresados
 def type_span(counter):
     dtypes = {
         "normal": "Normal", "fire": "Fuego", "flying": "Volador",

@@ -1,3 +1,7 @@
+#Módulo encargado de validar el nombre del pokemon que ingrese el usuario
+# dándole un formato para proceder la consulta a un archivo externo que contiene una lista de nombres
+# si no existen coincidencias, se le muestra un mensaje al usuario con indicaciones adicionales hasta
+# que exista una coincidencia exitosa
 with open("pokemon_list.txt", "r") as f:
     pokemon_lista = f.readlines()
     

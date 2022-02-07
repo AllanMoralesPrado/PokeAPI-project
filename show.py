@@ -1,4 +1,5 @@
-
+#Modulo encargado de cargar los archivos formato html en el navegador y eliminarlos
+#del almacenamiento secundario dentro de unos segundos
 import webbrowser
 import os
 import time

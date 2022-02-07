@@ -1,3 +1,5 @@
+#Modulo que recopila mensajes en formato str y metodos que devuelven mensajes tipo str
+
 def validacion_pokemon():
     return f'''Si el nombre del pokemon tiene espacios reemplace por "-". No coloque ningún
 tipo de signo de puntuación adicional.

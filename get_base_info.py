@@ -1,3 +1,8 @@
+#Modulo encargado de devolver un diccionario con los siguientes datos del pokemon
+# id del pokemon
+# peso del pokemon en gramos
+# valores estadisticos del pokemon
+# imagen frontal del pokemon (foto)
 from get_module import get_info
 
 def get_base_pokemon(pkmn_name):

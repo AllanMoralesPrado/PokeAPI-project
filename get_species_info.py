@@ -1,3 +1,6 @@
+#Modulo encargado de devolver dos valores:
+# descripcion aleatoria (en español) del pokemon
+# pre-evolucion (si existe)
 from get_module import get_info
 import random
 
