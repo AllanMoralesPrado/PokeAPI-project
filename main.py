@@ -27,20 +27,21 @@ while True:
         name = pv.validate(name)
         opcion = int(input(d.MENU_1))
         if opcion == 1:
-            id, weight, stats, sprite = get_base_pokemon(name)
+            base = get_base_pokemon(name)
             pre_evolution, description = get_species(name)
-            pokemon_tipo, pokemon_tipo_en, tipo_especial, pkmn_buffs_n_nerfs = get_types_info(name)
-            html = build_html(id,name,weight,stats,sprite,pre_evolution,description,pokemon_tipo,pokemon_tipo_en,tipo_especial,pkmn_buffs_n_nerfs)
+            pokemon_tipo, tipo_especial, pkmn_buffs_n_nerfs = get_types_info(name)
+
+            html = build_html(name, base, pre_evolution, description, pokemon_tipo, tipo_especial, pkmn_buffs_n_nerfs)
             show_pics(html,'output_alpha')
         elif opcion == 2:
             html = build_evo_html(name, get_evolution(name))
             show_pics(html,'evo_output_alpha')
         elif opcion == 3:
-            id, weight, stats, sprite = get_base_pokemon(name)
+            base = get_base_pokemon(name)
             pre_evolution, description = get_species(name)
-            pokemon_tipo, pokemon_tipo_en, tipo_especial, pkmn_buffs_n_nerfs = get_types_info(name)
+            pokemon_tipo, tipo_especial, pkmn_buffs_n_nerfs = get_types_info(name)
 
-            html = build_html(id,name,weight,stats,sprite,pre_evolution,description,pokemon_tipo,pokemon_tipo_en,tipo_especial,pkmn_buffs_n_nerfs)
+            html = build_html(name, base, pre_evolution, description, pokemon_tipo, tipo_especial, pkmn_buffs_n_nerfs)
             show_pics(html,'output_alpha')
             
             html = build_evo_html(name, get_evolution(name))
