@@ -1,15 +1,14 @@
 import time
 import os
 import sys
+import data as d
 import poke_validation as pv
-from get_module import get_info
 from get_evo import get_evolution
 from build_evo_html import build_evo_html
 from build_pokemon_html import build_html
 from get_base_info import get_base_pokemon
 from get_species_info import get_species
 from get_types import get_types_info
-import data as d
 from show import show_pics
 
 clear = 'cls' if sys.platform == 'win32' else 'clear'
@@ -42,10 +41,10 @@ while True:
             pokemon_tipo, tipo_especial, pkmn_buffs_n_nerfs = get_types_info(name)
 
             html = build_html(name, base, pre_evolution, description, pokemon_tipo, tipo_especial, pkmn_buffs_n_nerfs)
-            show_pics(html,'output_alpha')
+            show_pics(html,'output')
             
             html = build_evo_html(name, get_evolution(name))
-            show_pics(html,'evo_output_alpha')
+            show_pics(html,'evo_output')
         else:
             print('Serás lleado al menú princial :)')
             time.sleep(3)

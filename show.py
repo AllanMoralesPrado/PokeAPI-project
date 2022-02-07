@@ -21,12 +21,12 @@ if __name__ == '__main__':
     from get_types import get_types_info
 
     name = 'gardevoir'
-    id, weight, stats, sprite = get_base_pokemon(name)
+    base = get_base_pokemon(name)
     pre_evolution, description = get_species(name)
-    pokemon_tipo, pokemon_tipo_en, tipo_especial, pkmn_buffs_n_nerfs = get_types_info(name)
+    pokemon_tipo, tipo_especial, pkmn_buffs_n_nerfs = get_types_info(name)
 
-    html = build_html(id,name,weight,stats,sprite,pre_evolution,description,pokemon_tipo,pokemon_tipo_en,tipo_especial,pkmn_buffs_n_nerfs)
-    show_pics(html,'output_alpha')
+    html = build_html(name, base, pre_evolution, description, pokemon_tipo, tipo_especial, pkmn_buffs_n_nerfs)
+    show_pics(html,'output')
 
     html = build_evo_html(name, get_evolution(name))
-    show_pics(html,'evo_output_alpha')
+    show_pics(html,'evo_output')

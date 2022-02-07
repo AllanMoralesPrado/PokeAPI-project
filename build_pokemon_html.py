@@ -106,4 +106,4 @@ if __name__ == '__main__':
     pokemon_tipo, tipo_especial, pkmn_buffs_n_nerfs = get_types_info(name)
 
     html = build_html(name, base, pre_evolution, description, pokemon_tipo, tipo_especial, pkmn_buffs_n_nerfs)
-    show_pics(html,'output_alpha')
+    show_pics(html,'output')

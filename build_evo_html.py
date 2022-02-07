@@ -71,4 +71,4 @@ if __name__ == '__main__':
 
     name = 'eevee'
     html = build_evo_html(name, get_evolution(name))
-    show_pics(html,'evo_output_alpha')
+    show_pics(html,'evo_output')
