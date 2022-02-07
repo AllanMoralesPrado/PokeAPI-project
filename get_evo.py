@@ -25,12 +25,12 @@ def get_evolution(pkmn_name):
             for index in range(len(level)):
                 pkmn_nm = get_info(level[index])['name']
                 base = get_base_pokemon(pkmn_nm)
-                pkmn_id, pkmn_sprite = base[0], base[3]
+                pkmn_id, pkmn_sprite = base['id'], base['pkmn_sprite']
                 species = get_species(pkmn_nm)
                 pkmn_pre_evo = species[0]
                 types = get_types_info(pkmn_nm)
-                pkmn_types, pkmn_types_en, spec_types = types[0], types[1], types[2]
-                level[index] = dict(id = pkmn_id, name = pkmn_nm, sprite = pkmn_sprite, pre_evo = pkmn_pre_evo, types = pkmn_types, types_en = pkmn_types_en, spec = spec_types)
+                pkmn_types_en, spec_types = types[0], types[1]
+                level[index] = dict(id = pkmn_id, name = pkmn_nm, sprite = pkmn_sprite, pre_evo = pkmn_pre_evo, types = pkmn_types_en, spec = spec_types)
         
     return pkmn_evo_chain
 
